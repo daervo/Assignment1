@@ -24,8 +24,6 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ImportMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "importMarketFault");
-    private final static QName _DownloadFileFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "downloadFileFault");
     private final static QName _SummariseMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "summariseMarketFault");
     private final static QName _ConvertMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "convertMarketFault");
     private final static QName _VisualiseMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "visualiseMarketFault");
@@ -36,35 +34,11 @@ public class ObjectFactory {
      */
     public ObjectFactory() {
     }
+    
 
-    /**
-     * Create an instance of {@link ImportMarketDataRequest }
-     * 
-     */
-    public ImportMarketDataRequest createImportMarketDataRequest() {
-        return new ImportMarketDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link ImportMarketDataResponse }
-     * 
-     */
     public ImportMarketDataResponse createImportMarketDataResponse() {
         return new ImportMarketDataResponse();
     }
-
-    /**
-     * Create an instance of {@link DownloadFileRequest }
-     * 
-     */
-    public DownloadFileRequest createDownloadFileRequest() {
-        return new DownloadFileRequest();
-    }
-
-    /**
-     * Create an instance of {@link DownloadFileResponse }
-     * 
-     */
     public DownloadFileResponse createDownloadFileResponse() {
         return new DownloadFileResponse();
     }
@@ -123,24 +97,6 @@ public class ObjectFactory {
      */
     public ServiceFaultType createServiceFaultType() {
         return new ServiceFaultType();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServiceFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://topdown.soacourse.unsw.edu.au", name = "importMarketFault")
-    public JAXBElement<ServiceFaultType> createImportMarketFault(ServiceFaultType value) {
-        return new JAXBElement<ServiceFaultType>(_ImportMarketFault_QNAME, ServiceFaultType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServiceFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://topdown.soacourse.unsw.edu.au", name = "downloadFileFault")
-    public JAXBElement<ServiceFaultType> createDownloadFileFault(ServiceFaultType value) {
-        return new JAXBElement<ServiceFaultType>(_DownloadFileFault_QNAME, ServiceFaultType.class, null, value);
     }
 
     /**
