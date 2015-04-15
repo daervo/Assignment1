@@ -27,12 +27,35 @@ public class ObjectFactory {
     private final static QName _SummariseMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "summariseMarketFault");
     private final static QName _ConvertMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "convertMarketFault");
     private final static QName _VisualiseMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "visualiseMarketFault");
+    private final static QName _ImportMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "importMarketFault");
+    private final static QName _DownloadFileFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "downloadFileFault");
 
+    
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: au.edu.unsw.soacourse.topdown
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link DownloadFileResponse }
+     * Create an instance of {@link ImportMarketDataResponse }
+     * 
+     */
+    public DownloadFileResponse createDownloadFileResponse() {
+        return new DownloadFileResponse();
+    }
+    public ImportMarketDataResponse createImportMarketDataResponse() {
+        return new ImportMarketDataResponse();
+    }
+
+    /**
+     * Create an instance of {@link DownloadFileRequest }
+     * 
+     */
+    public DownloadFileRequest createDownloadFileRequest() {
+        return new DownloadFileRequest();
     }
 
     /**

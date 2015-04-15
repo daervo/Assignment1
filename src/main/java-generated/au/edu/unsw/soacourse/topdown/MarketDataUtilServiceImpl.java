@@ -270,27 +270,6 @@ public class MarketDataUtilServiceImpl implements MarketDataUtilService{
 			}
 		}
 		
-		private static void createInfoFile(String fileName, String sec, String startDate, String endDate, String currency){
-			OutputStream os = null;
-			try {
-				os = new FileOutputStream(fileName + ".txt");
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			PrintStream printStream = new PrintStream(os);
-			printStream.println(sec);
-			printStream.println(startDate);
-			printStream.println(endDate);
-			printStream.println(currency);		
-			printStream.close();
-			try {
-				os.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
 		private static void createDataFile(String newFile, String originalFile, double conversionRate, String countryCode){
 			// create new data file
 	    	OutputStream os = null;
@@ -359,6 +338,28 @@ public class MarketDataUtilServiceImpl implements MarketDataUtilService{
 		    }
 	    	
 	    	ps.close();
+		}
+		
+		private static void createInfoFile(String fileName, String sec, String startDate, String endDate, String currency){
+			OutputStream os = null;
+			try {
+				os = new FileOutputStream(fileName + ".txt");
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			PrintStream printStream = new PrintStream(os);
+			printStream.println(sec);
+			printStream.println(startDate);
+			printStream.println(endDate);
+			printStream.println(currency);		
+			printStream.close();
+			try {
+				os.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	
 }
