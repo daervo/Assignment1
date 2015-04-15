@@ -64,7 +64,7 @@
       <xsd:element name="convertMarketDataResponse">
         <xsd:complexType>
          <xsd:sequence>
-             <xsd:element name="eventSetIf" nillable="false" type="xsd:string"/>
+             <xsd:element name="eventSetId" nillable="false" type="xsd:string"/>
          </xsd:sequence>
         </xsd:complexType>
       </xsd:element>

@@ -32,7 +32,7 @@ import org.apache.commons.io.FileUtils;
 public class TopDownSimpleServiceImpl implements TopDownSimpleService {
 	
 	ObjectFactory factory = new ObjectFactory();
-	static String fileStorageDirectory = System.getProperty("java.io.tmpdir") + "9322-EM-JR/";
+	static String fileStorageDirectory = System.getProperty("catalina.home") + File.separator + "webapps" + File.separator + "Assignment1" + File.separator;//System.getProperty("java.io.tmpdir") + "9322-EM-JR/";
 	
     public ImportMarketDataResponse importMarketData(ImportMarketDataRequest parameters)
     throws ImportMarketFaultMsg {  
@@ -129,7 +129,14 @@ public class TopDownSimpleServiceImpl implements TopDownSimpleService {
     	
     	DownloadFileResponse res = factory.createDownloadFileResponse();
     	// FIX: This URL needs to be on the web server
-    	res.dataURL = fileStorageDirectory + parameters.eventSetID + ".csv";
+    	/*try {
+			res.dataURL = f.toURI().toURL().toString();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+    	//res.dataURL = fileStorageDirectory + parameters.eventSetID + ".csv";
+    	res.dataURL = "http://localhost:8080/Assignment1/" + parameters.eventSetID + ".csv";
     	return res; 	
     }
 
@@ -318,6 +325,8 @@ public class TopDownSimpleServiceImpl implements TopDownSimpleService {
 	
 	public static void saveFile(String downloadURL, String newFile, String startDate, String endDate, String sec) throws IOException {
 		// Check if our temporary directory exists, if not, create it
+		
+		System.out.println(fileStorageDirectory);
 		File storageDirectory = new File(fileStorageDirectory);
 		String line = "";
 		// if the directory does not exist, create it
