@@ -22,5 +22,9 @@
           id="TopdownOne" 
           implementor="au.edu.unsw.soacourse.topdown.TopDownSimpleServiceImpl" 
           address="/TopDownSimpleService" />
+          <jaxws:endpoint 
+          id="TopdownOne" 
+          implementor="au.edu.unsw.soacourse.topdown.MarketDataUtilServiceImpl" 
+          address="MarketDataUtilService" />
           
 </beans>
