@@ -32,7 +32,8 @@ import org.apache.commons.io.FileUtils;
 public class TopDownSimpleServiceImpl implements TopDownSimpleService {
 	
 	ObjectFactory factory = new ObjectFactory();
-	static String fileStorageDirectory = System.getProperty("catalina.home") + File.separator + "webapps" + File.separator + "Assignment1" + File.separator;//System.getProperty("java.io.tmpdir") + "9322-EM-JR/";
+	static String fileStorageDirectory = System.getProperty("catalina.home") + File.separator + "webapps" + File.separator + "ROOT"
+	+ File.separator + "MarketFiles" + File.separator;//System.getProperty("java.io.tmpdir") + "9322-EM-JR/";
 	
     public ImportMarketDataResponse importMarketData(ImportMarketDataRequest parameters)
     throws ImportMarketFaultMsg {  
@@ -128,15 +129,7 @@ public class TopDownSimpleServiceImpl implements TopDownSimpleService {
     	}
     	
     	DownloadFileResponse res = factory.createDownloadFileResponse();
-    	// FIX: This URL needs to be on the web server
-    	/*try {
-			res.dataURL = f.toURI().toURL().toString();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-    	//res.dataURL = fileStorageDirectory + parameters.eventSetID + ".csv";
-    	res.dataURL = "http://localhost:8080/Assignment1/" + parameters.eventSetID + ".csv";
+    	res.dataURL = "http://localhost:8080/MarketFiles/" + parameters.eventSetID + ".csv";
     	return res; 	
     }
 
