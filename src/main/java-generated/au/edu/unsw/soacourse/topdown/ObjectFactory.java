@@ -24,9 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SummariseMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "summariseMarketFault");
-    private final static QName _ConvertMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "convertMarketFault");
-    private final static QName _VisualiseMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "visualiseMarketFault");
+    private final static QName _ImportMarketFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "importMarketFault");
+    private final static QName _DownloadFileFault_QNAME = new QName("http://topdown.soacourse.unsw.edu.au", "downloadFileFault");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: au.edu.unsw.soacourse.topdown
@@ -34,61 +33,37 @@ public class ObjectFactory {
      */
     public ObjectFactory() {
     }
-    
 
+    /**
+     * Create an instance of {@link ImportMarketDataRequest }
+     * 
+     */
+    public ImportMarketDataRequest createImportMarketDataRequest() {
+        return new ImportMarketDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link ImportMarketDataResponse }
+     * 
+     */
     public ImportMarketDataResponse createImportMarketDataResponse() {
         return new ImportMarketDataResponse();
     }
+
+    /**
+     * Create an instance of {@link DownloadFileRequest }
+     * 
+     */
+    public DownloadFileRequest createDownloadFileRequest() {
+        return new DownloadFileRequest();
+    }
+
+    /**
+     * Create an instance of {@link DownloadFileResponse }
+     * 
+     */
     public DownloadFileResponse createDownloadFileResponse() {
         return new DownloadFileResponse();
-    }
-
-    /**
-     * Create an instance of {@link SummariseMarketDataRequest }
-     * 
-     */
-    public SummariseMarketDataRequest createSummariseMarketDataRequest() {
-        return new SummariseMarketDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link SummariseMarketDataResponse }
-     * 
-     */
-    public SummariseMarketDataResponse createSummariseMarketDataResponse() {
-        return new SummariseMarketDataResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConvertMarketDataRequest }
-     * 
-     */
-    public ConvertMarketDataRequest createConvertMarketDataRequest() {
-        return new ConvertMarketDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link ConvertMarketDataResponse }
-     * 
-     */
-    public ConvertMarketDataResponse createConvertMarketDataResponse() {
-        return new ConvertMarketDataResponse();
-    }
-
-    /**
-     * Create an instance of {@link VisualiseMarketDataRequest }
-     * 
-     */
-    public VisualiseMarketDataRequest createVisualiseMarketDataRequest() {
-        return new VisualiseMarketDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link VisualiseMarketDataResponse }
-     * 
-     */
-    public VisualiseMarketDataResponse createVisualiseMarketDataResponse() {
-        return new VisualiseMarketDataResponse();
     }
 
     /**
@@ -103,27 +78,33 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link ServiceFaultType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://topdown.soacourse.unsw.edu.au", name = "summariseMarketFault")
-    public JAXBElement<ServiceFaultType> createSummariseMarketFault(ServiceFaultType value) {
-        return new JAXBElement<ServiceFaultType>(_SummariseMarketFault_QNAME, ServiceFaultType.class, null, value);
+    @XmlElementDecl(namespace = "http://topdown.soacourse.unsw.edu.au", name = "importMarketFault")
+    public JAXBElement<ServiceFaultType> createImportMarketFault(ServiceFaultType value) {
+        return new JAXBElement<ServiceFaultType>(_ImportMarketFault_QNAME, ServiceFaultType.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ServiceFaultType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://topdown.soacourse.unsw.edu.au", name = "convertMarketFault")
-    public JAXBElement<ServiceFaultType> createConvertMarketFault(ServiceFaultType value) {
-        return new JAXBElement<ServiceFaultType>(_ConvertMarketFault_QNAME, ServiceFaultType.class, null, value);
+    @XmlElementDecl(namespace = "http://topdown.soacourse.unsw.edu.au", name = "downloadFileFault")
+    public JAXBElement<ServiceFaultType> createDownloadFileFault(ServiceFaultType value) {
+        return new JAXBElement<ServiceFaultType>(_DownloadFileFault_QNAME, ServiceFaultType.class, null, value);
     }
 
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServiceFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://topdown.soacourse.unsw.edu.au", name = "visualiseMarketFault")
-    public JAXBElement<ServiceFaultType> createVisualiseMarketFault(ServiceFaultType value) {
-        return new JAXBElement<ServiceFaultType>(_VisualiseMarketFault_QNAME, ServiceFaultType.class, null, value);
-    }
+	public ConvertMarketDataResponse createConvertMarketDataResponse() {
+		// TODO Auto-generated method stub
+		return new ConvertMarketDataResponse();
+	}
+
+	public SummariseMarketDataResponse createSummariseMarketDataResponse() {
+		// TODO Auto-generated method stub
+		return new SummariseMarketDataResponse();
+	}
+
+	public VisualiseMarketDataResponse createVisualiseMarketDataResponse() {
+		// TODO Auto-generated method stub
+		return new VisualiseMarketDataResponse();
+	}
 
 }
