@@ -40,7 +40,7 @@ public class MarketDataUtilServiceImpl implements MarketDataUtilService{
 		
 		VisualiseMarketDataResponse res = factory.createVisualiseMarketDataResponse();
 		// FIX: This URL needs to be on the web server
-		res.dataURL = fileStorageDirectory + parameters.eventSetID + ".html";
+		res.dataURL = "http://localhost:8080/MarketFiles/" + parameters.eventSetID + ".html";
 
     	return res;
 	}
@@ -222,6 +222,7 @@ public class MarketDataUtilServiceImpl implements MarketDataUtilService{
 		    
 			try {
 				os = new FileOutputStream(fileStorageDirectory + eventSetId + ".html");
+				System.out.println("Writing html to " + fileStorageDirectory + eventSetId + ".html");
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
