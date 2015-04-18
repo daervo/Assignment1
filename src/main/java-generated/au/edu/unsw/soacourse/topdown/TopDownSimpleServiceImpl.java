@@ -33,7 +33,7 @@ public class TopDownSimpleServiceImpl implements TopDownSimpleService {
 	
 	ObjectFactory factory = new ObjectFactory();
 	static String fileStorageDirectory = System.getProperty("catalina.home") + File.separator + "webapps" + File.separator + "ROOT"
-	+ File.separator + "MarketFiles" + File.separator;//System.getProperty("java.io.tmpdir") + "9322-EM-JR/";
+	+ File.separator + "MarketFiles" + File.separator;
 	
     public ImportMarketDataResponse importMarketData(ImportMarketDataRequest parameters)
     throws ImportMarketFaultMsg {  

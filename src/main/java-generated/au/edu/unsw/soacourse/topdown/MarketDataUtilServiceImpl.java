@@ -14,10 +14,13 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.UUID;
 
+import javax.jws.WebService;
+
+@WebService(endpointInterface = "au.edu.unsw.soacourse.topdown.MarketDataUtilService")
 public class MarketDataUtilServiceImpl implements MarketDataUtilService{
 	ObjectFactory factory = new ObjectFactory();
-	static String fileStorageDirectory = System.getProperty("catalina.home") + File.separator + "webapps" + File.separator + "Assignment1" + File.separator;//System.getProperty("java.io.tmpdir") + "9322-EM-JR/";
-
+	static String fileStorageDirectory = System.getProperty("catalina.home") + File.separator + "webapps" + File.separator + "ROOT"
+	+ File.separator + "MarketFiles" + File.separator;
 
 	@Override
 	public VisualiseMarketDataResponse visualiseMarketData(VisualiseMarketDataRequest parameters)
